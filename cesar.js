@@ -1,13 +1,22 @@
+const fs = require('fs')
 const readline = require('readline');
+   
+async function Leitura() {
+    const fileStream = fs.createReadStream('./inputs/cesar.txt');
+    const rl = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity
+    });
+    var texto = [];
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-rl.question('Digíte um número', (answer) => {
-  for(let i=0;i<answer;i++){
-    console.log(answer*i);
+    for await (const line of rl) {
+        if(!isNaN(line)=== true){
+          result(line);
+        }
+    }
   }
-  rl.close();
-});
+  Leitura();
+
+  function result(line){
+  
+  }
