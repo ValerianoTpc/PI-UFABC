@@ -1,5 +1,6 @@
 const fs = require('fs')
 const readline = require('readline');
+
    
 async function Leitura() {
     const fileStream = fs.createReadStream('./inputs/cesar.txt');
@@ -7,16 +8,18 @@ async function Leitura() {
       input: fileStream,
       crlfDelay: Infinity
     });
-    var texto = [];
+    const texto = [];
+    let letras;
 
     for await (const line of rl) {
         if(!isNaN(line)=== true){
-          result(line);
+          letras = line;
+        }else{
+          texto.push(line);
         }
     }
+    console.log(letras);
+    console.log(texto.length)
   }
   Leitura();
 
-  function result(line){
-  
-  }
