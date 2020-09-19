@@ -18,8 +18,10 @@ async function Leitura() {
           texto.push(line);
         }
     }
-    console.log(letras);
-    console.log(texto.length)
-  }
-  Leitura();
+
+    for(const res of texto){
+      console.log(res)
+    }
+}
+Leitura();
 
