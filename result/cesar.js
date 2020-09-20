@@ -3,7 +3,7 @@ const readline = require('readline');
 
    
 async function Leitura() {
-    const fileStream = fs.createReadStream('./inputs/cesar.txt');
+    const fileStream = fs.createReadStream('../inputs/cesar.txt');
     const rl = readline.createInterface({
       input: fileStream,
       crlfDelay: Infinity
@@ -20,8 +20,15 @@ async function Leitura() {
     }
 
     for(const res of texto){
-      console.log(res)
+      let num;
+      for(let i =0;i<res.length;i++){
+        if(res.charCodeAt(i) >= 65 && res.charCodeAt(i) <= 90){
+          num = (res.charCodeAt(i) + letras) % 26;
+        }
+      }
+      console.log(num);
     }
+
 }
 Leitura();
 
