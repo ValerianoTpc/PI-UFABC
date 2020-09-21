@@ -20,13 +20,13 @@ async function Leitura() {
     }
 
     for(const res of texto){
-      let num;
+      let num = 0;
       for(let i =0;i<res.length;i++){
         if(res.charCodeAt(i) >= 65 && res.charCodeAt(i) <= 90){
-          num = (res.charCodeAt(i) + letras) % 26;
+          num = (res.charCodeAt(i) - 65 + 3)% 26
         }
+        console.log(num + 65)
       }
-      console.log(num);
     }
 
 }
