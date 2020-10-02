@@ -2,7 +2,7 @@ const fs = require('fs')
 const readline = require('readline');
 
    
-async function carteiro() {
+async function chocolate() {
     const fileStream = fs.createReadStream('./inputs/cesar.txt');
     const rl = readline.createInterface({
       input: fileStream,
@@ -10,4 +10,4 @@ async function carteiro() {
     });
 }
 
-carteiro();
+chocolate();
